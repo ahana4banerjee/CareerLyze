@@ -2,6 +2,8 @@
 
 CareerLyze is a smart and intuitive AI Career Coach that helps you navigate your professional journey with ease. Built using **Next.js**, **Tailwind CSS**, **ShadCN UI**, **Prisma**, **NeonDB**, **Inngest**, and **Gemini AI**, this app offers personalized career insights and tools to help you land your dream job.
 
+Deployment: https://career-lyze.vercel.app/
+
 ---
 
 ## 🚀 Features
