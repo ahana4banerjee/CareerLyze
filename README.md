@@ -1,20 +1,39 @@
-# Full Stack AI Career Coach with Next JS, Neon DB, Tailwind, Prisma, Inngest, Shadcn UI Tutorial 🔥🔥
-## https://youtu.be/UbXpRv5ApKA
+# 🧠 CareerLyze – Your AI-Powered Career Coach
 
-![CareerLyze](https://github.com/user-attachments/assets/eee79242-4056-4d19-b655-2873788979e1)
+CareerLyze is a smart and intuitive AI Career Coach that helps you navigate your professional journey with ease. Built using **Next.js**, **Tailwind CSS**, **ShadCN UI**, **Prisma**, **NeonDB**, **Inngest**, and **Gemini AI**, this app offers personalized career insights and tools to help you land your dream job.
 
-### Make sure to create a `.env` file with following variables -
+---
 
-```
-DATABASE_URL=
+## 🚀 Features
 
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
-CLERK_SECRET_KEY=
+- 🔍 **Industry Insights**  
+  Stay updated with the latest data-driven trends, technologies, and hiring patterns in your selected industry.
 
-NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
-NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
-NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/onboarding
-NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/onboarding
+- 📊 **Trend Analytics Graphs**  
+  Visualize market movement, emerging skills, and job demand through real-time graphs.
 
-GEMINI_API_KEY=
-```
+- 📄 **Resume Builder**  
+  Create optimized, ATS-friendly resumes powered by AI.
+
+- 📨 **Cover Letter Generator**  
+  Generate personalized cover letters tailored to your job role and experience.
+
+- 🎤 **Mock Interview Quiz**  
+  Practice interviews with AI-generated questions and get instant feedback.
+
+---
+
+## 🛠️ Tech Stack
+
+| Tech         | Usage                         |
+|--------------|-------------------------------|
+| **Next.js**  | React Framework for frontend and routing |
+| **Tailwind CSS** | Utility-first CSS styling |
+| **ShadCN UI** | Elegant and accessible UI components |
+| **Prisma ORM** | Database interaction |
+| **NeonDB**   | Serverless Postgres database |
+| **Gemini AI** | AI-powered responses and generators |
+| **Inngest**  | Background jobs and workflows |
+
+---
+
