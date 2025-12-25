@@ -1,41 +1,120 @@
-# 🧠 CareerLyze – Your AI-Powered Career Coach
+# CareerLyze — AI-Powered Career Coach
 
-CareerLyze is a smart and intuitive AI Career Coach that helps you navigate your professional journey with ease. Built using **Next.js**, **Tailwind CSS**, **ShadCN UI**, **Prisma**, **NeonDB**, **Inngest**, and **Gemini AI**, this app offers personalized career insights and tools to help you land your dream job.
+**CareerLyze** is a full-stack AI career guidance platform that helps users explore career paths, build optimized resumes, generate tailored cover letters, and prepare for interviews using **Gemini AI**.
 
-Deployment: https://career-lyze.vercel.app/
-
----
-
-## 🚀 Features
-
-- 🔍 **Industry Insights**  
-  Stay updated with the latest data-driven trends, technologies, and hiring patterns in your selected industry.
-
-- 📊 **Trend Analytics Graphs**  
-  Visualize market movement, emerging skills, and job demand through real-time graphs.
-
-- 📄 **Resume Builder**  
-  Create optimized, ATS-friendly resumes powered by AI.
-
-- 📨 **Cover Letter Generator**  
-  Generate personalized cover letters tailored to your job role and experience.
-
-- 🎤 **Mock Interview Quiz**  
-  Practice interviews with AI-generated questions and get instant feedback.
+🔗 **Live Demo:** https://career-lyze.vercel.app/
 
 ---
 
-## 🛠️ Tech Stack
+## Problem Statement
 
-| Tech         | Usage                         |
-|--------------|-------------------------------|
-| **Next.js**  | React Framework for frontend and routing |
-| **Tailwind CSS** | Utility-first CSS styling |
-| **ShadCN UI** | Elegant and accessible UI components |
-| **Prisma ORM** | Database interaction |
-| **NeonDB**   | Serverless Postgres database |
-| **Gemini AI** | AI-powered responses and generators |
-| **Inngest**  | Background jobs and workflows |
+Students and job seekers often struggle with:
+
+- Choosing the right career path  
+- Understanding industry trends  
+- Writing ATS-friendly resumes  
+- Preparing effectively for interviews  
+
+CareerLyze solves this by combining **AI, automation, and analytics** into one unified platform.
 
 ---
+
+## Key Features
+
+### 🔍 Industry Insights
+- Curated insights on industry trends  
+- Skill demand and hiring pattern analysis  
+- Data-driven career suggestions  
+
+---
+
+### 📊 Trend Analytics
+- Real-time graphs on:
+  - Market demand  
+  - Emerging technologies  
+  - Skill growth patterns  
+
+---
+
+### 📄 AI Resume Builder
+- Create ATS-optimized resumes  
+- Smart section generation based on career goals  
+
+---
+
+### 📨 Cover Letter Generator
+- Personalized cover letters  
+- Role-specific language & structure  
+
+---
+
+### 🎤 Mock Interview Engine
+- AI-generated interview questions  
+- Instant feedback & performance analysis  
+
+---
+
+## Tech Stack
+
+| Technology | Usage |
+|------------|-------|
+| Next.js | Frontend framework & routing |
+| Tailwind CSS | UI styling |
+| ShadCN UI | Component library |
+| Prisma ORM | Database abstraction |
+| NeonDB | Serverless PostgreSQL |
+| Gemini AI | AI-powered generation |
+| Inngest | Background jobs & workflows |
+
+---
+
+## System Architecture
+```text
+User
+↓
+Next.js Frontend
+↓
+API Routes
+↓
+├─ Gemini AI Engine
+├─ Resume Generator
+├─ Cover Letter Engine
+├─ Interview Engine
+└─ Trend Analytics Processor
+↓
+NeonDB (PostgreSQL)
+```
+---
+
+
+
+## Getting Started Locally
+
+```bash
+git clone https://github.com/ahana4banerjee/CareerLyze.git
+cd CareerLyze
+npm install
+npm run dev
+```
+---
+
+## Future Enhancements
+
+- Voice-based mock interviews
+
+- AI career roadmap generator
+
+- Job portal API integrations
+
+- Multi-language support
+
+---
+## Author
+
+**Ahana Banerjee**
+
+Electronics & Communication Engineering
+
+JNTUH Hyderabad
+
 
