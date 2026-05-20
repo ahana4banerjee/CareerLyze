@@ -78,7 +78,7 @@ export async function saveQuizResult(questions, answers) {
 
   // Calculate score on the server — never trust the client-provided score
   const correctCount = questionResults.filter((q) => q.isCorrect).length;
-  const score = (correctCount / questionResults.length) * 100;
+  const score = questionResults.length > 0 ? (correctCount / questionResults.length) * 100 : 0;
 
   // Get wrong answers
   const wrongAnswers = questionResults.filter((q) => !q.isCorrect);
