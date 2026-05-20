@@ -66,12 +66,12 @@ export default async function Header() {
             </DropdownMenuTrigger>
             <DropdownMenuContent
               align="end"
-              className="w-48 bg-card border-border/50"
+              className="w-48 bg-white text-foreground border border-gray-200 shadow-lg ring-1 ring-gray-100 dark:bg-card dark:border-border/50 dark:shadow-none dark:ring-0"
             >
               <DropdownMenuItem asChild>
                 <Link
                   href="/resume"
-                  className="flex items-center gap-2 cursor-pointer w-full text-primary-foreground hover:bg-secondary/50"
+                    className="flex items-center gap-2 cursor-pointer w-full text-gray-900 dark:text-primary-foreground hover:bg-secondary/50"
                 >
                   <FileText className="h-4 w-4" />
                   <span>Resume Builder</span>
@@ -80,7 +80,7 @@ export default async function Header() {
               <DropdownMenuItem asChild>
                 <Link
                   href="/interview"
-                  className="flex items-center gap-2 cursor-pointer w-full text-primary-foreground hover:bg-secondary/50"
+                    className="flex items-center gap-2 cursor-pointer w-full text-gray-900 dark:text-primary-foreground hover:bg-secondary/50"
                 >
                   <GraduationCap className="h-4 w-4" />
                   <span>Mock Interview</span>
@@ -89,17 +89,17 @@ export default async function Header() {
               <DropdownMenuItem asChild>
                 <Link
                   href="/skill-analytics"
-                  className="flex items-center gap-2 cursor-pointer w-full text-primary-foreground hover:bg-secondary/50"
+                    className="flex items-center gap-2 cursor-pointer w-full text-gray-900 dark:text-primary-foreground hover:bg-secondary/50"
                 >
                   <PenBox className="h-4 w-4" />
                   <span>Skill Analytics</span>
                 </Link>
               </DropdownMenuItem>
-              <div className="my-2 border-t border-border/50" />
+              <div className="my-2 border-t border-gray-200 dark:border-border/50" />
               <DropdownMenuItem asChild>
                 <Link
                   href="/settings"
-                  className="flex items-center gap-2 cursor-pointer w-full text-primary-foreground hover:bg-secondary/50"
+                    className="flex items-center gap-2 cursor-pointer w-full text-gray-900 dark:text-primary-foreground hover:bg-secondary/50"
                 >
                   <Settings className="h-4 w-4" />
                   <span>Settings</span>
