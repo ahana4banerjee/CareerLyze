@@ -24,7 +24,8 @@ import {
   Bell,
   Edit3,
   Eye,
-  EyeOff
+  EyeOff,
+  TrendingUp,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -32,6 +33,19 @@ export default function ResumeBuilder({ initialContent }) {
   const [tone, setTone] = useState("Executive");
   const [isEditing, setIsEditing] = useState(false);
   const [showPreview, setShowPreview] = useState(true);
+
+  const handleDownloadPDF = () => {
+    window.print();
+  };
+
+  const handleShareLink = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      alert("Link copied to clipboard!");
+    } catch {
+      alert("Could not copy link.");
+    }
+  };
 
   const [resumeData, setResumeData] = useState({
     fullName: "ALEXANDER VANCE",
@@ -139,18 +153,6 @@ export default function ResumeBuilder({ initialContent }) {
         {(!isEditing || showPreview) && (
           <div className="flex-1 flex justify-center overflow-x-hidden">
             <div className="w-full max-w-[800px] bg-card rounded-md shadow-[0_0_40px_rgba(0,0,0,0.1)] dark:shadow-[0_0_40px_rgba(255,255,255,0.05)] border-x border-b border-border border-t-[6px] border-t-primary p-4 sm:p-6 lg:p-10 text-foreground min-h-[1056px] relative transition-all duration-300">
-
-            {/* Professional Summary */}
-            <div className="mb-4 sm:mb-6">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 mb-2">
-                <h2 className="text-xs sm:text-sm font-bold tracking-widest text-foreground uppercase">Professional Summary</h2>
-                <Badge variant="secondary" className="bg-primary/10 text-primary hover:bg-primary/20 border-primary/20 text-[8px] sm:text-[10px] py-0 h-5 flex-shrink-0">
-                  <Sparkles className="w-2.5 sm:w-3 h-2.5 sm:h-3 mr-0.5 sm:mr-1" /> ai-optimized for faang
-                </Badge>
-              </div>
-
-
-              {/* Professional Summary */}
               <div className="mb-4 sm:mb-6">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 mb-2">
                   <h2 className="text-xs sm:text-sm font-bold tracking-widest text-foreground uppercase">Professional Summary</h2>
@@ -329,10 +331,10 @@ export default function ResumeBuilder({ initialContent }) {
 
               {/* Action Buttons */}
               <div className="mt-6 sm:mt-8 space-y-2 sm:space-y-3">
-                <Button className="w-full h-10 sm:h-14 text-xs sm:text-base font-semibold bg-primary hover:bg-primary/90 text-primary-foreground hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-shadow duration-300">
+                <Button onClick={handleDownloadPDF} className="w-full h-10 sm:h-14 text-xs sm:text-base font-semibold bg-primary hover:bg-primary/90 text-primary-foreground hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-shadow duration-300">
                   <Download className="w-4 sm:w-5 h-4 sm:h-5 mr-1 sm:mr-2" /> Download PDF
                 </Button>
-                <Button variant="outline" className="w-full h-10 sm:h-14 text-xs sm:text-base font-semibold bg-transparent border-border/50 hover:bg-secondary/50 text-foreground hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-shadow duration-300">
+                <Button variant="outline" onClick={handleShareLink} className="w-full h-10 sm:h-14 text-xs sm:text-base font-semibold bg-transparent border-border/50 hover:bg-secondary/50 text-foreground hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-shadow duration-300">
                   <Share2 className="w-4 sm:w-5 h-4 sm:h-5 mr-1 sm:mr-2" /> Share Link
                 </Button>
               </div>
