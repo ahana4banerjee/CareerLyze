@@ -17,7 +17,7 @@ export async function saveUserSkills(skillsArray) {
     const formattedSkills=skillsArray.map(skill => skill.toLowerCase().trim());
     //create a skill if it's new,or do nothing if already exists
     await Promise.all(
-      formattedSkills.map(skillName =>prisma.skill.upsert({
+      formattedSkills.map(skillName =>db.skill.upsert({
         where:{name:skillName},
         update:{},
         create:{name:skillName},
@@ -25,7 +25,7 @@ export async function saveUserSkills(skillsArray) {
     )
   );
     //Find the user in NeonDB and update their skills array
-    const updatedUser = await prisma.user.update({
+    const updatedUser = await db.user.update({
       where: {
         clerkUserId: userId,
       },
@@ -54,7 +54,7 @@ export async function getUserSkills() {
   }
 
   try {
-    const user = await prisma.user.findUnique({
+    const user = await db.user.findUnique({
       where: { clerkUserId: userId },
       include: {
         skills: true, // Fetch the related skills
