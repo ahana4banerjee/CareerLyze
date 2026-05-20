@@ -32,7 +32,7 @@ export async function updateUser(data) {
           if (!industryInsight) {
             const insights = await generateAIInsights(data.industry);
 
-            industryInsight = await db.industryInsight.create({
+            industryInsight = await tx.industryInsight.create({
               data: {
                 industry: data.industry,
                 ...insights,
@@ -62,7 +62,7 @@ export async function updateUser(data) {
       );
 
       revalidatePath("/");
-      return result.user;
+      return result.updatedUser;
     },
     {
       fallbackMessage: "We couldn't complete your profile right now. Please try again.",
