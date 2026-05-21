@@ -120,7 +120,18 @@ export default function LandingPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {testimonial.map((testimonial, index) => (
-              <Card key={index} className="bg-card border-border">
+              <Card
+                key={index}
+                className="
+                  bg-card border border-border
+                  transition-all duration-300 ease-in-out
+                  hover:-translate-y-2
+                  hover:scale-[1.02]
+                  hover:shadow-2xl hover:shadow-primary/10
+                  hover:border-primary/40
+                  hover:bg-card/80
+                "
+              >
                 <CardContent className="pt-6">
                   <div className="flex flex-col space-y-4">
                     <div className="flex items-center space-x-4 mb-4">
@@ -204,28 +215,28 @@ export default function LandingPage() {
             </p>
             <Link href="/dashboard" passHref>
               <Button
-  size="lg"
-  className="
-    group
-    h-12
-    px-8
-    mt-4
-    rounded-xl
-    bg-white
-    text-purple-700
-    font-semibold
-    shadow-md
-    border
-    border-white/40
-    transition-all
-    duration-300
-    hover:bg-purple-100
-    hover:shadow-lg
-  "
->
-  Start Your Journey Today
-  <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-</Button>
+                size="lg"
+                className="
+                group
+                h-12
+                px-8
+                mt-4
+                rounded-xl
+                bg-white
+                text-purple-700
+                font-semibold   
+                shadow-md
+                border
+                border-white/40
+                transition-all
+                duration-300
+               hover:bg-purple-100
+                hover:shadow-lg
+               "
+              >
+                Start Your Journey Today
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+              </Button>
             </Link>
           </div>
         </div>
