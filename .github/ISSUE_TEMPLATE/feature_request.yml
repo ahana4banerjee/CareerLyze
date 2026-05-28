@@ -1,0 +1,28 @@
+name: Feature request
+description: Suggest an idea for this project.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out this form to submit a feature request.
+  - type: textarea
+    id: overview
+    attributes:
+      label: Feature Overview
+      description: Explain the feature request.
+    validations:
+      required: true
+  - type: textarea
+    id: justification
+    attributes:
+      label: Why is this needed?
+      description: Explain the impact of this improvement.
+    validations:
+      required: true
+  - type: textarea
+    id: design
+    attributes:
+      label: Proposed Implementation Details
+      description: Describe the technical implementation.
+    validations:
+      required: true
