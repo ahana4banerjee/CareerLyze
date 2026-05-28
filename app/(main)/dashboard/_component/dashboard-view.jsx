@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -40,6 +41,22 @@ const itemVariants = {
 
 const DashboardView = ({ insights }) => {
   const { user } = useUser();
+
+  if (!insights) {
+    return (
+      <div className="flex flex-col items-center justify-center p-12 text-center border-2 border-dashed border-border/60 rounded-3xl bg-card/25 backdrop-blur mt-8">
+        <Briefcase className="w-16 h-16 text-primary mb-4 animate-pulse" />
+        <h2 className="text-2xl font-bold text-foreground">No Insights Data Yet</h2>
+        <p className="text-muted-foreground text-sm max-w-sm mt-2 mb-6">
+          Complete your profile onboarding to generate AI career insights and resume recommendations.
+        </p>
+        <Link href="/onboarding" className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 font-semibold text-primary-foreground shadow hover:bg-primary/95 transition-all">
+          Complete Onboarding <ArrowRight className="w-4 h-4 ml-2" />
+        </Link>
+      </div>
+    );
+  }
+
   return (
     <motion.div
       variants={containerVariants}
