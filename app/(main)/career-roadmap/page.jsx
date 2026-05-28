@@ -1,9 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { generateRoadmap } from "@/actions/roadmap";
 
 export default function CareerRoadmapPage() {
+  useEffect(() => {
+    document.title = "AI Career Roadmap | CareerLyze";
+  }, []);
+
   const [career, setCareer] = useState("");
   const [skills, setSkills] = useState("");
 
