@@ -144,24 +144,14 @@ export default function ResumeBuilder({ initialContent }) {
             <div className="mb-4 sm:mb-6">
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 mb-2">
                 <h2 className="text-xs sm:text-sm font-bold tracking-widest text-foreground uppercase">Professional Summary</h2>
-                <Badge variant="secondary" className="bg-primary/10 text-primary hover:bg-primary/20 border-primary/20 text-[8px] sm:text-[10px] py-0 h-5 flex-shrink-0">
+                <Badge variant="secondary" className="bg-primary/10 text-primary hover:bg-cyan-100 border-primary/20 text-[8px] sm:text-[10px] py-0 h-5 flex-shrink-0">
                   <Sparkles className="w-2.5 sm:w-3 h-2.5 sm:h-3 mr-0.5 sm:mr-1" /> ai-optimized for faang
                 </Badge>
               </div>
-
-
-              {/* Professional Summary */}
-              <div className="mb-4 sm:mb-6">
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 mb-2">
-                  <h2 className="text-xs sm:text-sm font-bold tracking-widest text-foreground uppercase">Professional Summary</h2>
-                  <Badge variant="secondary" className="bg-primary/10 text-primary hover:bg-cyan-100 border-primary/20 text-[8px] sm:text-[10px] py-0 h-5 flex-shrink-0">
-                    <Sparkles className="w-2.5 sm:w-3 h-2.5 sm:h-3 mr-0.5 sm:mr-1" /> ai-optimized for faang
-                  </Badge>
-                </div>
-                <p className="text-xs sm:text-sm leading-relaxed text-muted-foreground whitespace-pre-wrap">
-                  {resumeData.summary || 'Your professional summary will appear here.'}
-                </p>
-              </div>
+              <p className="text-xs sm:text-sm leading-relaxed text-muted-foreground whitespace-pre-wrap">
+                {resumeData.summary || 'Your professional summary will appear here.'}
+              </p>
+            </div>
 
               {/* Experience */}
               {resumeData.experience && resumeData.experience.length > 0 && (
