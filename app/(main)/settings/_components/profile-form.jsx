@@ -231,7 +231,10 @@ const ProfileForm = ({ user }) => {
             <Button
               type="button"
               variant="outline"
-              onClick={() => reset()}
+              onClick={() => {
+                reset();
+                toast.success("Form resets to saved values");
+              }}
               disabled={updateLoading}
             >
               Cancel
