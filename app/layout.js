@@ -8,6 +8,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { dark } from "@clerk/themes";
 import BackToTop from "@/components/back-to-top";
 
+import { checkClientEnv } from "@/lib/env-check";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -16,6 +18,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  checkClientEnv();
   return (
     <ClerkProvider
       appearance={{
