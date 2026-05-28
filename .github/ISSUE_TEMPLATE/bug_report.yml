@@ -1,0 +1,35 @@
+name: Bug report
+description: Create a report to help us improve.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out this form to submit a bug report.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Describe the issue clearly.
+    validations:
+      required: true
+  - type: textarea
+    id: current-behavior
+    attributes:
+      label: Current Behavior
+      description: Explain existing behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: Explain the implementation approach.
+    validations:
+      required: true
+  - type: textarea
+    id: expected-outcome
+    attributes:
+      label: Expected Outcome
+      description: Explain expected improvements.
+    validations:
+      required: true
