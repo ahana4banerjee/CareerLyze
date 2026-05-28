@@ -50,14 +50,25 @@ const OnboardingForm = ({ industries }) => {
     resolver: zodResolver(onboardingSchema),
   });
 
+  const sanitizeString = (str) => {
+    if (!str) return str;
+    return str.replace(/<[^>]*>/g, "").trim();
+  };
+
   const onSubmit = async (values) => {
     try {
       const formattedIndustry = `${values.industry}-${values.subIndustry
         .toLowerCase()
         .replace(/ /g, "-")}`;
 
-      await updateUserFn({
+      const sanitizedValues = {
         ...values,
+        bio: sanitizeString(values.bio),
+        skills: sanitizeString(values.skills),
+      };
+
+      await updateUserFn({
+        ...sanitizedValues,
         industry: formattedIndustry,
       });
     } catch (error) {
