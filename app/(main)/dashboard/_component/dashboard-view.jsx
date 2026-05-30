@@ -1,12 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { useUser } from "@clerk/nextjs";
+import { usePathname } from "next/navigation";
 import { 
   Send, 
   Settings2, 
@@ -38,10 +39,61 @@ const itemVariants = {
   },
 };
 
+// Skeleton card for loading state
+const SkeletonCard = () => (
+  <div className="rounded-2xl bg-card/50 border border-border/50 p-6 animate-pulse space-y-4">
+    <div className="flex justify-between">
+      <div className="h-10 w-10 rounded-xl bg-secondary/60" />
+      <div className="h-5 w-20 rounded-full bg-secondary/60" />
+    </div>
+    <div className="space-y-2">
+      <div className="h-6 w-3/4 rounded-lg bg-secondary/60" />
+      <div className="h-4 w-1/2 rounded-lg bg-secondary/40" />
+    </div>
+    <div className="h-2 w-full rounded-full bg-secondary/60" />
+  </div>
+);
+
 const DashboardView = ({ insights }) => {
-  const { user } = useUser();
+  const { user, isLoaded } = useUser();
+  const pathname = usePathname();
+
+  // Show skeleton while Clerk is hydrating the session
+  if (!isLoaded) {
+    return (
+      <div className="space-y-8 pb-10">
+        {/* Header skeleton */}
+        <div className="space-y-3 mt-4 animate-pulse">
+          <div className="h-10 w-72 rounded-xl bg-secondary/60" />
+          <div className="h-4 w-96 rounded-lg bg-secondary/40" />
+        </div>
+        {/* KPI skeletons */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <SkeletonCard />
+          <SkeletonCard />
+          <SkeletonCard />
+        </div>
+        {/* Bottom grid skeletons */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="lg:col-span-2 space-y-4">
+            <SkeletonCard />
+            <SkeletonCard />
+            <SkeletonCard />
+          </div>
+          <div className="space-y-4">
+            <SkeletonCard />
+            <SkeletonCard />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
+    // Key on pathname forces React to remount this subtree on every route change,
+    // so Framer Motion always replays the entry animation from initial="hidden".
     <motion.div
+      key={pathname}
       variants={containerVariants}
       initial="hidden"
       animate="visible"
