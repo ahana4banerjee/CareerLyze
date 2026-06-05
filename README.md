@@ -31,7 +31,9 @@ into one unified ecosystem.
 
 ---
 
-# 🌐 Live Demo
+<!-- Changed heading level for consistency with README structure -->
+
+## 🌐 Live Demo
 
 🚀 **Try it here:**
 [CareerLyze Live Demo](https://career-lyze.vercel.app/)
