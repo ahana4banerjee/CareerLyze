@@ -6,7 +6,7 @@
 
 [![Open Source](https://img.shields.io/badge/Open%20Source-Yes-brightgreen.svg)]()
 [![GSSoC'26](https://img.shields.io/badge/GSSoC'26-Welcoming%20Contributors-orange)]()
-[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)]()
+[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Next.js](https://img.shields.io/badge/Next.js-15-black)]()
 [![Gemini AI](https://img.shields.io/badge/AI-Gemini-blueviolet)]()
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-success)]()
