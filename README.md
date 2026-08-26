@@ -197,7 +197,11 @@ npm install
 
 ## 4️⃣ Setup Environment Variables
 
-Create a .env file in the root directory.
+Copy the example env file and fill in your credentials:
+
+```bash
+cp .env.example .env
+```
 
 ```bash
 DATABASE_URL=<your-prisma-url>
